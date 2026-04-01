@@ -1,11 +1,531 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Meta พื้นฐานสำหรับ responsive และข้อมูลหน้าเว็บ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>[ชื่อแบรนด์] | Landing Page</title>
+    <meta name="description" content="[คำอธิบายสั้น ๆ ของหน้าเว็บหรือแบรนด์]" />
+
+    <!-- โหลดฟอนต์ที่ใช้กับหัวข้อและเนื้อหาหลัก -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN และตั้งค่า font family เพิ่มเติม -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans Thai", "sans-serif"],
+              display: ["Mitr", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* style รวมของทั้งหน้า: ตอนนี้ใช้สำหรับ smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-50 font-sans text-zinc-800 antialiased">
+    <!-- Header: โลโก้ เมนูนำทาง และปุ่ม CTA ด้านบน -->
+    <header class="border-b border-zinc-200 bg-white">
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+      >
+        <!-- ชื่อแบรนด์ / โลโก้ -->
+        <a href="#home" class="font-display text-2xl text-zinc-900">
+          [Brand Name]
+        </a>
+
+        <!-- เมนูสำหรับเดสก์ท็อป -->
+        <nav class="hidden items-center gap-8 text-sm text-zinc-600 md:flex">
+          <a href="#lines" class="transition hover:text-zinc-900">[เมนู 1]</a>
+          <a href="#products" class="transition hover:text-zinc-900"
+            >[เมนู 2]</a
+          >
+          <a href="#subscribe" class="transition hover:text-zinc-900"
+            >[เมนู 3]</a
+          >
+        </nav>
+
+        <!-- ปุ่มหลักใน header -->
+        <a
+          href="#subscribe"
+          class="rounded-full bg-zinc-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+        >
+          [Primary CTA]
+        </a>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero Section: แนะนำแบรนด์ สินค้าเด่น และภาพหลัก -->
+      <section class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div class="grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <!-- ฝั่งข้อความหลักของ hero -->
+          <div>
+            <!-- คำโปรยสั้นเหนือหัวข้อ -->
+            <p
+              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            >
+              [Tagline]
+            </p>
+
+            <!-- หัวข้อหลักของหน้า -->
+            <h1
+              class="mt-5 max-w-2xl font-display text-4xl leading-tight text-zinc-900 sm:text-5xl"
+            >
+              [Headline หลักของแบรนด์หรือสินค้า]
+            </h1>
+
+            <!-- คำอธิบายสรุปว่าแบรนด์ขายอะไรและเหมาะกับใคร -->
+            <p class="mt-6 max-w-xl text-base leading-8 text-zinc-600">
+              [คำอธิบายสั้น ๆ ว่าแบรนด์ขายอะไร เด่นตรงไหน และเหมาะกับใคร]
+            </p>
+
+            <!-- กลุ่มปุ่ม CTA หลักและรอง -->
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#lines"
+                class="inline-flex items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
+              >
+                [ปุ่มหลัก]
+              </a>
+              <a
+                href="#products"
+                class="inline-flex items-center justify-center rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-800 transition hover:bg-white"
+              >
+                [ปุ่มรอง]
+              </a>
+            </div>
+
+            <!-- keyword หรือจุดสื่อสารสั้น ๆ ของแบรนด์ -->
+            <div class="mt-8 flex flex-wrap gap-3 text-sm text-zinc-600">
+              <span
+                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+              >
+                [Keyword 1]
+              </span>
+              <span
+                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+              >
+                [Keyword 2]
+              </span>
+              <span
+                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+              >
+                [Keyword 3]
+              </span>
+            </div>
+
+            <!-- highlight สั้น 3 ข้อใต้ hero -->
+            <div
+              class="mt-10 grid gap-4 border-t border-zinc-200 pt-6 text-sm text-zinc-600 sm:grid-cols-3"
+            >
+              <div>
+                <p class="font-medium text-zinc-900">[Highlight 1]</p>
+                <p class="mt-1">[คำอธิบายสั้น]</p>
+              </div>
+              <div>
+                <p class="font-medium text-zinc-900">[Highlight 2]</p>
+                <p class="mt-1">[คำอธิบายสั้น]</p>
+              </div>
+              <div>
+                <p class="font-medium text-zinc-900">[Highlight 3]</p>
+                <p class="mt-1">[คำอธิบายสั้น]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ฝั่งภาพประกอบและข้อมูลสรุปย่อย -->
+          <div class="rounded-[2rem] border border-zinc-200 bg-white p-5">
+            <!-- พื้นที่วางภาพหลักของ hero -->
+            <div
+              class="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-zinc-300 bg-zinc-100 text-sm text-zinc-500"
+            >
+              [พื้นที่สำหรับภาพ Hero หรือภาพรวมสินค้า]
+            </div>
+
+            <!-- การ์ดข้อมูลย่อยใต้ภาพหลัก -->
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                  [Type 1]
+                </p>
+                <p class="mt-2 font-display text-lg text-zinc-900">
+                  [คำอธิบายย่อ]
+                </p>
+              </div>
+              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                  [Type 2]
+                </p>
+                <p class="mt-2 font-display text-lg text-zinc-900">
+                  [คำอธิบายย่อ]
+                </p>
+              </div>
+              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                  [Type 3]
+                </p>
+                <p class="mt-2 font-display text-lg text-zinc-900">
+                  [คำอธิบายย่อ]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Lines Section: แยกหมวดหรือ product line ของแบรนด์ -->
+      <section id="lines" class="mx-auto max-w-6xl px-6 py-16">
+        <!-- หัวข้อและคำอธิบายของหมวดสินค้า -->
+        <div class="max-w-2xl">
+          <p
+            class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+          >
+            [Section Label]
+          </p>
+          <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+            [หัวข้อหมวดสินค้า]
+          </h2>
+          <p class="mt-4 text-base leading-8 text-zinc-600">
+            [คำอธิบายว่าหน้านี้รองรับสินค้าได้กี่ประเภท หรือแบรนด์มี product
+            line อะไรบ้าง]
+          </p>
+        </div>
+
+        <!-- กลุ่มการ์ดหมวดสินค้า -->
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <p
+              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            >
+              01
+            </p>
+            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+              [ชื่อหมวดสินค้า 1]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">
+              [ยกตัวอย่างสินค้าในหมวดนี้]
+            </p>
+          </article>
+
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <p
+              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            >
+              02
+            </p>
+            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+              [ชื่อหมวดสินค้า 2]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">
+              [ยกตัวอย่างสินค้าในหมวดนี้]
+            </p>
+          </article>
+
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <p
+              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            >
+              03
+            </p>
+            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+              [ชื่อหมวดสินค้า 3]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">
+              [ยกตัวอย่างสินค้าในหมวดนี้]
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Featured Products Section: สินค้าแนะนำหรือสินค้าขายดี -->
+      <section id="products" class="mx-auto max-w-6xl px-6 py-16">
+        <!-- หัวข้อและคำเกริ่นของสินค้าเด่น -->
+        <div class="max-w-2xl">
+          <p
+            class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+          >
+            [Section Label]
+          </p>
+          <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+            [หัวข้อสินค้าแนะนำ]
+          </h2>
+          <p class="mt-4 text-base leading-8 text-zinc-600">
+            [คำอธิบายสั้น ๆ ของกลุ่มสินค้าเด่นหรือสินค้าขายดี]
+          </p>
+        </div>
+
+        <!-- กลุ่มการ์ดสินค้า -->
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                [Category]
+              </span>
+              <span class="text-xs text-zinc-500">[Size]</span>
+            </div>
+            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+              [ชื่อสินค้า]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [รายละเอียดสั้น ๆ ของสินค้า]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <div class="mt-2 flex items-center justify-between">
+              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <a
+                href="#subscribe"
+                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+              >
+                [ปุ่มสินค้า]
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                [Category]
+              </span>
+              <span class="text-xs text-zinc-500">[Size]</span>
+            </div>
+            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+              [ชื่อสินค้า]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [รายละเอียดสั้น ๆ ของสินค้า]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <div class="mt-2 flex items-center justify-between">
+              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <a
+                href="#subscribe"
+                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+              >
+                [ปุ่มสินค้า]
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                [Category]
+              </span>
+              <span class="text-xs text-zinc-500">[Size]</span>
+            </div>
+            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+              [ชื่อสินค้า]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [รายละเอียดสั้น ๆ ของสินค้า]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <div class="mt-2 flex items-center justify-between">
+              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <a
+                href="#subscribe"
+                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+              >
+                [ปุ่มสินค้า]
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                [Category]
+              </span>
+              <span class="text-xs text-zinc-500">[Size]</span>
+            </div>
+            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+              [ชื่อสินค้า]
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-zinc-600">
+              [รายละเอียดสั้น ๆ ของสินค้า]
+            </p>
+            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <div class="mt-2 flex items-center justify-between">
+              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <a
+                href="#subscribe"
+                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+              >
+                [ปุ่มสินค้า]
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Benefits Section: จุดเด่นหรือเหตุผลที่ควรเลือกแบรนด์ -->
+      <section id="benefits" class="mx-auto max-w-6xl px-6 py-16">
+        <div class="border-y border-zinc-200 py-12">
+          <!-- หัวข้อและคำเกริ่นของจุดเด่น -->
+          <div class="max-w-2xl">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            >
+              [Section Label]
+            </p>
+            <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+              [หัวข้อจุดเด่น]
+            </h2>
+            <p class="mt-4 text-base leading-8 text-zinc-600">
+              [เกริ่นสั้น ๆ ว่าทำไมแบรนด์นี้ตอบโจทย์ผู้ใช้]
+            </p>
+          </div>
+
+          <!-- รายการจุดเด่น 3 ข้อ -->
+          <div class="mt-10 grid gap-10 md:grid-cols-3">
+            <div>
+              <p
+                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              >
+                01
+              </p>
+              <h3 class="mt-3 font-display text-2xl text-zinc-900">
+                [จุดเด่น 1]
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-zinc-600">
+                [อธิบายจุดเด่นข้อแรก]
+              </p>
+            </div>
+
+            <div>
+              <p
+                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              >
+                02
+              </p>
+              <h3 class="mt-3 font-display text-2xl text-zinc-900">
+                [จุดเด่น 2]
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-zinc-600">
+                [อธิบายจุดเด่นข้อสอง]
+              </p>
+            </div>
+
+            <div>
+              <p
+                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              >
+                03
+              </p>
+              <h3 class="mt-3 font-display text-2xl text-zinc-900">
+                [จุดเด่น 3]
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-zinc-600">
+                [อธิบายจุดเด่นข้อสาม]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscribe / CTA Section: ส่วนปิดการขายและฟอร์มเก็บข้อมูล -->
+      <section id="subscribe" class="mx-auto max-w-6xl px-6 py-16">
+        <div class="rounded-[2rem] border border-zinc-200 bg-white p-8 md:p-10">
+          <div class="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+            <!-- ข้อความชวนให้ติดต่อหรือสมัคร -->
+            <div>
+              <p
+                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              >
+                [Section Label]
+              </p>
+              <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+                [หัวข้อปิดการขาย]
+              </h2>
+              <p class="mt-4 max-w-xl text-base leading-8 text-zinc-600">
+                [คำอธิบายสั้น ๆ เพื่อชวนให้กรอกอีเมล ติดต่อ หรือกดสั่งซื้อ]
+              </p>
+            </div>
+
+            <!-- ฟอร์มตัวอย่างสำหรับรับข้อมูลติดต่อ -->
+            <form
+              class="rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-5"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="email" class="text-sm font-medium text-zinc-900">
+                [ข้อความกำกับ input]
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="[placeholder@example.com]"
+                class="mt-3 w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-zinc-800 outline-none focus:border-zinc-900"
+              />
+              <button
+                type="submit"
+                class="mt-4 w-full rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
+              >
+                [ปุ่มส่งข้อมูล]
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: ชื่อแบรนด์และลิงก์สำคัญท้ายหน้า -->
+    <footer class="border-t border-zinc-200 bg-white">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between"
+      >
+        <!-- ชื่อแบรนด์ -->
+        <p>[Brand Name]</p>
+        <!-- ลิงก์สำคัญสำหรับเลื่อนไปยัง section ต่าง ๆ -->
+        <div class="flex gap-5">
+          <a href="#lines" class="transition hover:text-zinc-900">[ลิงก์ 1]</a>
+          <a href="#products" class="transition hover:text-zinc-900"
+            >[ลิงก์ 2]</a
+          >
+          <a href="#subscribe" class="transition hover:text-zinc-900"
+            >[ลิงก์ 3]</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

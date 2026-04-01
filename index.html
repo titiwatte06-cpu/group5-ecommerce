@@ -23,6 +23,16 @@
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              brand: {
+                red: "#E36255",
+                peach: "#EC9A86",
+                blue: "#A2C5C9",
+                yellow: "#F3C262",
+                cream: "#F1E0CE",
+                dark: "#2A2421",
+              },
+            },
             fontFamily: {
               sans: ["Noto Sans Thai", "sans-serif"],
               display: ["Mitr", "sans-serif"],
@@ -39,24 +49,26 @@
       }
     </style>
   </head>
-  <body class="bg-zinc-50 font-sans text-zinc-800 antialiased">
+  <body class="bg-[#FCFAF8] font-sans text-brand-dark/90 antialiased">
     <!-- Header: โลโก้ เมนูนำทาง และปุ่ม CTA ด้านบน -->
-    <header class="border-b border-zinc-200 bg-white">
+    <header class="border-b border-brand-cream bg-white">
       <div
         class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
       >
         <!-- ชื่อแบรนด์ / โลโก้ -->
-        <a href="#home" class="font-display text-2xl text-zinc-900">
+        <a href="#home" class="font-display text-2xl text-brand-dark">
           [Brand Name]
         </a>
 
         <!-- เมนูสำหรับเดสก์ท็อป -->
-        <nav class="hidden items-center gap-8 text-sm text-zinc-600 md:flex">
-          <a href="#lines" class="transition hover:text-zinc-900">[เมนู 1]</a>
-          <a href="#products" class="transition hover:text-zinc-900"
+        <nav
+          class="hidden items-center gap-8 text-sm text-brand-dark/70 md:flex"
+        >
+          <a href="#lines" class="transition hover:text-brand-dark">[เมนู 1]</a>
+          <a href="#products" class="transition hover:text-brand-dark"
             >[เมนู 2]</a
           >
-          <a href="#subscribe" class="transition hover:text-zinc-900"
+          <a href="#subscribe" class="transition hover:text-brand-dark"
             >[เมนู 3]</a
           >
         </nav>
@@ -64,7 +76,7 @@
         <!-- ปุ่มหลักใน header -->
         <a
           href="#subscribe"
-          class="rounded-full bg-zinc-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+          class="rounded-full bg-brand-red px-5 py-2 text-sm font-medium text-white transition hover:bg-brand-peach hover:text-white"
         >
           [Primary CTA]
         </a>
@@ -79,20 +91,20 @@
           <div>
             <!-- คำโปรยสั้นเหนือหัวข้อ -->
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
             >
               [Tagline]
             </p>
 
             <!-- หัวข้อหลักของหน้า -->
             <h1
-              class="mt-5 max-w-2xl font-display text-4xl leading-tight text-zinc-900 sm:text-5xl"
+              class="mt-5 max-w-2xl font-display text-4xl leading-tight text-brand-dark sm:text-5xl"
             >
               [Headline หลักของแบรนด์หรือสินค้า]
             </h1>
 
             <!-- คำอธิบายสรุปว่าแบรนด์ขายอะไรและเหมาะกับใคร -->
-            <p class="mt-6 max-w-xl text-base leading-8 text-zinc-600">
+            <p class="mt-6 max-w-xl text-base leading-8 text-brand-dark/70">
               [คำอธิบายสั้น ๆ ว่าแบรนด์ขายอะไร เด่นตรงไหน และเหมาะกับใคร]
             </p>
 
@@ -100,32 +112,32 @@
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#lines"
-                class="inline-flex items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
+                class="inline-flex items-center justify-center rounded-full bg-brand-red px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-peach hover:text-white"
               >
                 [ปุ่มหลัก]
               </a>
               <a
                 href="#products"
-                class="inline-flex items-center justify-center rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-800 transition hover:bg-white"
+                class="inline-flex items-center justify-center rounded-full border border-brand-cream px-6 py-3 text-sm font-medium text-brand-dark/90 transition hover:bg-white"
               >
                 [ปุ่มรอง]
               </a>
             </div>
 
             <!-- keyword หรือจุดสื่อสารสั้น ๆ ของแบรนด์ -->
-            <div class="mt-8 flex flex-wrap gap-3 text-sm text-zinc-600">
+            <div class="mt-8 flex flex-wrap gap-3 text-sm text-brand-dark/70">
               <span
-                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+                class="rounded-full border border-brand-cream bg-white px-4 py-2"
               >
                 [Keyword 1]
               </span>
               <span
-                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+                class="rounded-full border border-brand-cream bg-white px-4 py-2"
               >
                 [Keyword 2]
               </span>
               <span
-                class="rounded-full border border-zinc-300 bg-white px-4 py-2"
+                class="rounded-full border border-brand-cream bg-white px-4 py-2"
               >
                 [Keyword 3]
               </span>
@@ -133,55 +145,61 @@
 
             <!-- highlight สั้น 3 ข้อใต้ hero -->
             <div
-              class="mt-10 grid gap-4 border-t border-zinc-200 pt-6 text-sm text-zinc-600 sm:grid-cols-3"
+              class="mt-10 grid gap-4 border-t border-brand-cream pt-6 text-sm text-brand-dark/70 sm:grid-cols-3"
             >
               <div>
-                <p class="font-medium text-zinc-900">[Highlight 1]</p>
+                <p class="font-medium text-brand-dark">[Highlight 1]</p>
                 <p class="mt-1">[คำอธิบายสั้น]</p>
               </div>
               <div>
-                <p class="font-medium text-zinc-900">[Highlight 2]</p>
+                <p class="font-medium text-brand-dark">[Highlight 2]</p>
                 <p class="mt-1">[คำอธิบายสั้น]</p>
               </div>
               <div>
-                <p class="font-medium text-zinc-900">[Highlight 3]</p>
+                <p class="font-medium text-brand-dark">[Highlight 3]</p>
                 <p class="mt-1">[คำอธิบายสั้น]</p>
               </div>
             </div>
           </div>
 
           <!-- ฝั่งภาพประกอบและข้อมูลสรุปย่อย -->
-          <div class="rounded-[2rem] border border-zinc-200 bg-white p-5">
+          <div class="rounded-[2rem] border border-brand-cream bg-white p-5">
             <!-- พื้นที่วางภาพหลักของ hero -->
             <div
-              class="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-zinc-300 bg-zinc-100 text-sm text-zinc-500"
+              class="flex min-h-[320px] items-center justify-center rounded-[1.5rem] border border-dashed border-brand-cream bg-zinc-100 text-sm text-brand-dark/50"
             >
               [พื้นที่สำหรับภาพ Hero หรือภาพรวมสินค้า]
             </div>
 
             <!-- การ์ดข้อมูลย่อยใต้ภาพหลัก -->
             <div class="mt-5 grid gap-3 sm:grid-cols-3">
-              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <div class="rounded-[1.25rem] border border-brand-cream p-4">
+                <p
+                  class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                >
                   [Type 1]
                 </p>
-                <p class="mt-2 font-display text-lg text-zinc-900">
+                <p class="mt-2 font-display text-lg text-brand-dark">
                   [คำอธิบายย่อ]
                 </p>
               </div>
-              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <div class="rounded-[1.25rem] border border-brand-cream p-4">
+                <p
+                  class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                >
                   [Type 2]
                 </p>
-                <p class="mt-2 font-display text-lg text-zinc-900">
+                <p class="mt-2 font-display text-lg text-brand-dark">
                   [คำอธิบายย่อ]
                 </p>
               </div>
-              <div class="rounded-[1.25rem] border border-zinc-200 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <div class="rounded-[1.25rem] border border-brand-cream p-4">
+                <p
+                  class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                >
                   [Type 3]
                 </p>
-                <p class="mt-2 font-display text-lg text-zinc-900">
+                <p class="mt-2 font-display text-lg text-brand-dark">
                   [คำอธิบายย่อ]
                 </p>
               </div>
@@ -195,14 +213,14 @@
         <!-- หัวข้อและคำอธิบายของหมวดสินค้า -->
         <div class="max-w-2xl">
           <p
-            class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
           >
             [Section Label]
           </p>
-          <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+          <h2 class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl">
             [หัวข้อหมวดสินค้า]
           </h2>
-          <p class="mt-4 text-base leading-8 text-zinc-600">
+          <p class="mt-4 text-base leading-8 text-brand-dark/70">
             [คำอธิบายว่าหน้านี้รองรับสินค้าได้กี่ประเภท หรือแบรนด์มี product
             line อะไรบ้าง]
           </p>
@@ -211,58 +229,58 @@
         <!-- กลุ่มการ์ดหมวดสินค้า -->
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
             >
               01
             </p>
-            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+            <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 1]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">
+            <p class="mt-5 text-sm text-brand-dark/50">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
             >
               02
             </p>
-            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+            <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 2]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">
+            <p class="mt-5 text-sm text-brand-dark/50">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
             >
               03
             </p>
-            <h3 class="mt-3 font-display text-2xl text-zinc-900">
+            <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 3]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">
+            <p class="mt-5 text-sm text-brand-dark/50">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
@@ -274,14 +292,14 @@
         <!-- หัวข้อและคำเกริ่นของสินค้าเด่น -->
         <div class="max-w-2xl">
           <p
-            class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
           >
             [Section Label]
           </p>
-          <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
+          <h2 class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl">
             [หัวข้อสินค้าแนะนำ]
           </h2>
-          <p class="mt-4 text-base leading-8 text-zinc-600">
+          <p class="mt-4 text-base leading-8 text-brand-dark/70">
             [คำอธิบายสั้น ๆ ของกลุ่มสินค้าเด่นหรือสินค้าขายดี]
           </p>
         </div>
@@ -289,26 +307,28 @@
         <!-- กลุ่มการ์ดสินค้า -->
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <span
+                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+              >
                 [Category]
               </span>
-              <span class="text-xs text-zinc-500">[Size]</span>
+              <span class="text-xs text-brand-dark/50">[Size]</span>
             </div>
-            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+            <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
-              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <p class="font-display text-3xl text-brand-dark">[ราคา]</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -316,26 +336,28 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <span
+                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+              >
                 [Category]
               </span>
-              <span class="text-xs text-zinc-500">[Size]</span>
+              <span class="text-xs text-brand-dark/50">[Size]</span>
             </div>
-            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+            <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
-              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <p class="font-display text-3xl text-brand-dark">[ราคา]</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -343,26 +365,28 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <span
+                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+              >
                 [Category]
               </span>
-              <span class="text-xs text-zinc-500">[Size]</span>
+              <span class="text-xs text-brand-dark/50">[Size]</span>
             </div>
-            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+            <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
-              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <p class="font-display text-3xl text-brand-dark">[ราคา]</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -370,26 +394,28 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-zinc-200 bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
           >
             <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <span
+                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+              >
                 [Category]
               </span>
-              <span class="text-xs text-zinc-500">[Size]</span>
+              <span class="text-xs text-brand-dark/50">[Size]</span>
             </div>
-            <h3 class="mt-4 font-display text-2xl text-zinc-900">
+            <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-zinc-600">
+            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-zinc-500">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
-              <p class="font-display text-3xl text-zinc-900">[ราคา]</p>
+              <p class="font-display text-3xl text-brand-dark">[ราคา]</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -400,128 +426,142 @@
 
       <!-- Benefits Section: จุดเด่นหรือเหตุผลที่ควรเลือกแบรนด์ -->
       <section id="benefits" class="mx-auto max-w-6xl px-6 py-16">
-        <div class="border-y border-zinc-200 py-12">
-          <!-- หัวข้อและคำเกริ่นของจุดเด่น -->
-          <div class="max-w-2xl">
-            <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
-            >
-              [Section Label]
-            </p>
-            <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
-              [หัวข้อจุดเด่น]
-            </h2>
-            <p class="mt-4 text-base leading-8 text-zinc-600">
-              [เกริ่นสั้น ๆ ว่าทำไมแบรนด์นี้ตอบโจทย์ผู้ใช้]
-            </p>
-          </div>
-
-          <!-- รายการจุดเด่น 3 ข้อ -->
-          <div class="mt-10 grid gap-10 md:grid-cols-3">
-            <div>
+        <div
+          class="rounded-[2rem] bg-brand-blue/10 px-8 py-12 border border-brand-blue/20"
+        >
+          <div class="border-y border-brand-cream py-12">
+            <!-- หัวข้อและคำเกริ่นของจุดเด่น -->
+            <div class="max-w-2xl">
               <p
-                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
+                class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
               >
-                01
+                [Section Label]
               </p>
-              <h3 class="mt-3 font-display text-2xl text-zinc-900">
-                [จุดเด่น 1]
-              </h3>
-              <p class="mt-3 text-sm leading-7 text-zinc-600">
-                [อธิบายจุดเด่นข้อแรก]
+              <h2
+                class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl"
+              >
+                [หัวข้อจุดเด่น]
+              </h2>
+              <p class="mt-4 text-base leading-8 text-brand-dark/70">
+                [เกริ่นสั้น ๆ ว่าทำไมแบรนด์นี้ตอบโจทย์ผู้ใช้]
               </p>
             </div>
 
-            <div>
-              <p
-                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
-              >
-                02
-              </p>
-              <h3 class="mt-3 font-display text-2xl text-zinc-900">
-                [จุดเด่น 2]
-              </h3>
-              <p class="mt-3 text-sm leading-7 text-zinc-600">
-                [อธิบายจุดเด่นข้อสอง]
-              </p>
-            </div>
+            <!-- รายการจุดเด่น 3 ข้อ -->
+            <div class="mt-10 grid gap-10 md:grid-cols-3">
+              <div>
+                <p
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                >
+                  01
+                </p>
+                <h3 class="mt-3 font-display text-2xl text-brand-dark">
+                  [จุดเด่น 1]
+                </h3>
+                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                  [อธิบายจุดเด่นข้อแรก]
+                </p>
+              </div>
 
-            <div>
-              <p
-                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
-              >
-                03
-              </p>
-              <h3 class="mt-3 font-display text-2xl text-zinc-900">
-                [จุดเด่น 3]
-              </h3>
-              <p class="mt-3 text-sm leading-7 text-zinc-600">
-                [อธิบายจุดเด่นข้อสาม]
-              </p>
+              <div>
+                <p
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                >
+                  02
+                </p>
+                <h3 class="mt-3 font-display text-2xl text-brand-dark">
+                  [จุดเด่น 2]
+                </h3>
+                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                  [อธิบายจุดเด่นข้อสอง]
+                </p>
+              </div>
+
+              <div>
+                <p
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                >
+                  03
+                </p>
+                <h3 class="mt-3 font-display text-2xl text-brand-dark">
+                  [จุดเด่น 3]
+                </h3>
+                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                  [อธิบายจุดเด่นข้อสาม]
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Subscribe / CTA Section: ส่วนปิดการขายและฟอร์มเก็บข้อมูล -->
-      <section id="subscribe" class="mx-auto max-w-6xl px-6 py-16">
-        <div class="rounded-[2rem] border border-zinc-200 bg-white p-8 md:p-10">
-          <div class="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-            <!-- ข้อความชวนให้ติดต่อหรือสมัคร -->
-            <div>
-              <p
-                class="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500"
-              >
-                [Section Label]
-              </p>
-              <h2 class="mt-4 font-display text-3xl text-zinc-900 sm:text-4xl">
-                [หัวข้อปิดการขาย]
-              </h2>
-              <p class="mt-4 max-w-xl text-base leading-8 text-zinc-600">
-                [คำอธิบายสั้น ๆ เพื่อชวนให้กรอกอีเมล ติดต่อ หรือกดสั่งซื้อ]
-              </p>
-            </div>
+      <section id="subscribe" class="bg-brand-cream/20">
+        <div class="mx-auto max-w-6xl px-6 py-16">
+          <div
+            class="rounded-[2rem] border border-brand-cream bg-white p-8 md:p-10"
+          >
+            <div class="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+              <!-- ข้อความชวนให้ติดต่อหรือสมัคร -->
+              <div>
+                <p
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                >
+                  [Section Label]
+                </p>
+                <h2
+                  class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl"
+                >
+                  [หัวข้อปิดการขาย]
+                </h2>
+                <p class="mt-4 max-w-xl text-base leading-8 text-brand-dark/70">
+                  [คำอธิบายสั้น ๆ เพื่อชวนให้กรอกอีเมล ติดต่อ หรือกดสั่งซื้อ]
+                </p>
+              </div>
 
-            <!-- ฟอร์มตัวอย่างสำหรับรับข้อมูลติดต่อ -->
-            <form
-              class="rounded-[1.5rem] border border-zinc-200 bg-zinc-50 p-5"
-              onsubmit="event.preventDefault()"
-            >
-              <label for="email" class="text-sm font-medium text-zinc-900">
-                [ข้อความกำกับ input]
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="[placeholder@example.com]"
-                class="mt-3 w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-zinc-800 outline-none focus:border-zinc-900"
-              />
-              <button
-                type="submit"
-                class="mt-4 w-full rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
+              <!-- ฟอร์มตัวอย่างสำหรับรับข้อมูลติดต่อ -->
+              <form
+                class="rounded-[1.5rem] border border-brand-cream bg-[#FCFAF8] p-5"
+                onsubmit="event.preventDefault()"
               >
-                [ปุ่มส่งข้อมูล]
-              </button>
-            </form>
+                <label for="email" class="text-sm font-medium text-brand-dark">
+                  [ข้อความกำกับ input]
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="[placeholder@example.com]"
+                  class="mt-3 w-full rounded-2xl border border-brand-cream bg-white px-4 py-3 text-brand-dark/90 outline-none focus:border-brand-red"
+                />
+                <button
+                  type="submit"
+                  class="mt-4 w-full rounded-2xl bg-brand-red px-5 py-3 text-sm font-medium text-white transition hover:bg-brand-peach hover:text-white"
+                >
+                  [ปุ่มส่งข้อมูล]
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer: ชื่อแบรนด์และลิงก์สำคัญท้ายหน้า -->
-    <footer class="border-t border-zinc-200 bg-white">
+    <footer class="border-t border-brand-cream bg-white">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between"
+        class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-brand-dark/70 md:flex-row md:items-center md:justify-between"
       >
         <!-- ชื่อแบรนด์ -->
         <p>[Brand Name]</p>
         <!-- ลิงก์สำคัญสำหรับเลื่อนไปยัง section ต่าง ๆ -->
         <div class="flex gap-5">
-          <a href="#lines" class="transition hover:text-zinc-900">[ลิงก์ 1]</a>
-          <a href="#products" class="transition hover:text-zinc-900"
+          <a href="#lines" class="transition hover:text-brand-dark"
+            >[ลิงก์ 1]</a
+          >
+          <a href="#products" class="transition hover:text-brand-dark"
             >[ลิงก์ 2]</a
           >
-          <a href="#subscribe" class="transition hover:text-zinc-900"
+          <a href="#subscribe" class="transition hover:text-brand-dark"
             >[ลิงก์ 3]</a
           >
         </div>

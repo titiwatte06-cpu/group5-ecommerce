@@ -1,0 +1,86 @@
+use("group5-ecommerce");
+
+db.customer.deleteMany({});
+
+db.customer.insertMany([
+  {
+    customerName: "สมชาย รักษ์ดี",
+    email: "somchai.r@example.com",
+    phoneNumber: "081-234-5678",
+    lineId: "somchai_line",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "นรีรัตน์ แสงทอง",
+    email: "nareerat.s@example.com",
+    phoneNumber: "089-876-5432",
+    lineId: "naree_official",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "ธนพล วิริยะ",
+    email: "tanapol.v@example.com",
+    phoneNumber: "085-555-4433",
+    lineId: "tanapol_v",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "พัชราภา มั่นคง",
+    email: "patchara.m@example.com",
+    phoneNumber: "086-111-2233",
+    lineId: "patcha_m",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "เกียรติศักดิ์ ชัยชนะ",
+    email: "kiatisak.c@example.com",
+    phoneNumber: "084-777-8899",
+    lineId: "kiat_win",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "สุพรรษา บัวหลวง",
+    email: "supansa.b@example.com",
+    phoneNumber: "083-000-1122",
+    lineId: "pansaline",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "วิชัย ประเสริฐ",
+    email: "wichai.p@example.com",
+    phoneNumber: "082-999-0011",
+    lineId: "wichai_line",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "อานนท์ สิทธิผล",
+    email: "arnon.s@example.com",
+    phoneNumber: "088-444-5566",
+    lineId: "arnon_s",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "สิรินทร์ ใจงาม",
+    email: "sirin.j@example.com",
+    phoneNumber: "087-222-3344",
+    lineId: "sirin_beauty",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    customerName: "ชัยยุทธ รุ่งเรือง",
+    email: "chaiyuth.r@example.com",
+    phoneNumber: "089-666-7788",
+    lineId: "yuth_r",
+    createAt: new Date(),
+    updatedAt: new Date(),
+  },
+]);

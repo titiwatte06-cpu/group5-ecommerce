@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
@@ -25,12 +25,17 @@
           extend: {
             colors: {
               brand: {
-                red: "#E36255",
-                peach: "#EC9A86",
-                blue: "#A2C5C9",
-                yellow: "#F3C262",
-                cream: "#F1E0CE",
-                dark: "#2A2421",
+                base: "#F4F7EE",
+                surface: "#FEFFF8",
+                cream: "#DDE5CB",
+                red: "#8AB33B",
+                "red-deep": "#6F9531",
+                peach: "#EDF5D8",
+                sage: "#E0C44C",
+                "sage-soft": "#F7EAAF",
+                dark: "#2F3426",
+                muted: "#667055",
+                subtle: "#90997D",
               },
             },
             fontFamily: {
@@ -45,30 +50,49 @@
     <style>
       /* style รวมของทั้งหน้า: ตอนนี้ใช้สำหรับ smooth scroll */
       html {
+        font-size: 18px;
         scroll-behavior: smooth;
+      }
+
+      .text-sm {
+        font-size: 1rem !important;
+      }
+
+      .text-xs {
+        font-size: 0.95rem !important;
+      }
+
+      @media (min-width: 1024px) {
+        html {
+          font-size: 19px;
+        }
       }
     </style>
   </head>
-  <body class="bg-[#FCFAF8] font-sans text-brand-dark/90 antialiased">
+  <body class="bg-brand-base font-sans text-brand-dark antialiased">
     <!-- Header: โลโก้ เมนูนำทาง และปุ่ม CTA ด้านบน -->
-    <header class="border-b border-brand-cream bg-white">
+    <header
+      class="border-b border-brand-cream bg-brand-surface/90 backdrop-blur"
+    >
       <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10"
       >
         <!-- ชื่อแบรนด์ / โลโก้ -->
         <a href="#home" class="font-display text-2xl text-brand-dark">
-          <img class="h-16"src="images/juciy-healthy-logo.png"/>
+          <img class="h-16" src="images/juciy-healthy-logo.png" />
         </a>
 
         <!-- เมนูสำหรับเดสก์ท็อป -->
         <nav
-          class="hidden items-center gap-8 text-sm text-brand-dark/70 md:flex"
+          class="hidden items-center gap-12 text-sm text-brand-subtle md:flex"
         >
-          <a href="#lines" class="transition hover:text-brand-dark">ประเภทสินค้า</a>
-          <a href="#products" class="transition hover:text-brand-dark"
+          <a href="#lines" class="transition hover:text-brand-red"
+            >ประเภทสินค้า</a
+          >
+          <a href="#products" class="transition hover:text-brand-red"
             >สินค้าแนะนำ</a
           >
-          <a href="#subscribe" class="transition hover:text-brand-dark"
+          <a href="#subscribe" class="transition hover:text-brand-red"
             >ทำไมถึงต้อง Juicy Healthy</a
           >
         </nav>
@@ -76,128 +100,165 @@
         <!-- ปุ่มหลักใน header -->
         <a
           href="#subscribe"
-          class="rounded-full bg-brand-red px-5 py-2 text-sm font-medium text-white transition hover:bg-brand-peach hover:text-white"
+          class="rounded-full bg-brand-red px-5 py-2 text-sm font-medium text-white transition hover:bg-brand-red-deep"
         >
-          [Primary CTA]
+          สั่งซื้อ
         </a>
       </div>
     </header>
 
     <main id="home">
       <!-- Hero Section: แนะนำแบรนด์ สินค้าเด่น และภาพหลัก -->
-      <!-- border-lime-400 border-dashed border-[2px] -->
-      <section class="mx-auto max-w-6xl px-6 py-16 md:py-24 border-lime-400 border-dashed border-[2px]">feature/hero-wip-ong
+      <section
+        class="mx-4 max-w-6xl rounded-[2rem] border border-brand-cream bg-gradient-to-br from-brand-surface via-brand-surface to-brand-peach/65 px-6 py-16 shadow-[0_24px_60px_rgba(138,179,59,0.12)] sm:mx-6 sm:px-8 lg:mx-auto lg:px-12 md:py-20"
+      >
         <div class="grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-          
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-red"
+            >
               Fuel Your Best Life
             </p>
 
-            <h1 class="mt-5 max-w-2xl font-display text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
+            <h1
+              class="mt-5 max-w-2xl font-display text-4xl font-bold leading-tight text-brand-dark sm:text-5xl"
+            >
               Healthy Hub: ขุมพลังสุขภาพจากโปรตีนและน้ำสกัดเย็น
             </h1>
 
-            <p class="mt-6 max-w-xl text-base leading-8 text-gray-600">
-              เครื่องดื่มโปรตีนเชคแคลอรี่ต่ำและน้ำผักผลไม้สกัดเย็นเพื่อสุขภาพ รสชาติอร่อย ตอบโจทย์คนรักสุขภาพ ผู้ที่ต้องการสร้างกล้ามเนื้อ และเติมความสดชื่นในทุกวันแบบไม่ฝืน
+            <p class="mt-6 max-w-xl text-base leading-8 text-brand-muted">
+              เครื่องดื่มโปรตีนเชคแคลอรี่ต่ำและน้ำผักผลไม้สกัดเย็นเพื่อสุขภาพ
+              รสชาติอร่อย ตอบโจทย์คนรักสุขภาพ ผู้ที่ต้องการสร้างกล้ามเนื้อ
+              และเติมความสดชื่นในทุกวันแบบไม่ฝืน
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#protein"
-                class="inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-orange-600"
+                class="inline-flex items-center justify-center rounded-full bg-brand-red px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-brand-red-deep"
               >
                 ดูเมนูโปรตีนเชค
               </a>
               <a
                 href="#cold-pressed"
-                class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50"
+                class="inline-flex items-center justify-center rounded-full border border-brand-sage/70 bg-brand-surface px-6 py-3 text-sm font-medium text-[#8A6D12] shadow-sm transition hover:bg-brand-sage-soft hover:text-[#6F570C]"
               >
                 ดูเครื่องดื่มสกัดเย็น
               </a>
             </div>
 
-            <div class="mt-8 flex flex-wrap gap-3 text-sm text-gray-700">
-              <span class="flex items-center gap-2 rounded-md border border-gray-200 bg-gray-50 px-4 py-2">
+            <div class="mt-8 flex flex-wrap gap-3 text-sm text-brand-muted">
+              <span
+                class="flex items-center gap-2 rounded-full border border-brand-cream bg-brand-surface/80 px-4 py-2"
+              >
                 🥛 นมโคแท้ 100%
               </span>
-              <span class="flex items-center gap-2 rounded-md border border-gray-200 bg-gray-50 px-4 py-2">
+              <span
+                class="flex items-center gap-2 rounded-full border border-brand-cream bg-brand-surface/80 px-4 py-2"
+              >
                 💪 โปรตีนสูง 30g
               </span>
-              <span class="flex items-center gap-2 rounded-md border border-gray-200 bg-gray-50 px-4 py-2">
+              <span
+                class="flex items-center gap-2 rounded-full border border-brand-cream bg-brand-surface/80 px-4 py-2"
+              >
                 🌿 สกัดเย็นคงคุณค่า
               </span>
             </div>
 
-            <div class="mt-10 grid gap-4 border-t border-gray-200 pt-6 text-sm text-gray-600 sm:grid-cols-3">
+            <div
+              class="mt-10 grid gap-4 border-t border-brand-cream pt-6 text-sm text-brand-muted sm:grid-cols-3"
+            >
               <div>
-                <p class="font-semibold text-gray-900">วัตถุดิบพรีเมียม</p>
+                <p class="font-semibold text-brand-dark">วัตถุดิบพรีเมียม</p>
                 <p class="mt-1">คัดสรรใบชาคุณภาพและผลไม้ออร์แกนิค</p>
               </div>
               <div>
-                <p class="font-semibold text-gray-900">สูตรไม่มีน้ำตาล</p>
+                <p class="font-semibold text-brand-dark">สูตรไม่มีน้ำตาล</p>
                 <p class="mt-1">ใช้ความหวานจากธรรมชาติ แคลอรี่ต่ำ</p>
               </div>
               <div>
-                <p class="font-semibold text-gray-900">ดื่มง่าย รสชาติเยี่ยม</p>
+                <p class="font-semibold text-brand-dark">
+                  ดื่มง่าย รสชาติเยี่ยม
+                </p>
                 <p class="mt-1">เนื้อเนียนนุ่ม ไม่ฝืดคอ อร่อยได้ทุกวัน</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
-            <div class="relative flex h-full items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-white">
-              <img 
-                src="https://github.com/weerayosong/weerayosong.github.io/blob/main/images/hero.png?raw=true" 
-                alt="เครื่องดื่มโปรตีนและน้ำสกัดเย็น Healthy Hub" 
+          <div
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-base/80 p-4 shadow-[0_18px_40px_rgba(47,38,35,0.08)]"
+          >
+            <div
+              class="relative flex h-full items-center justify-center overflow-hidden rounded-xl border border-brand-cream bg-brand-surface"
+            >
+              <img
+                src="https://github.com/weerayosong/weerayosong.github.io/blob/main/images/hero.png?raw=true"
+                alt="เครื่องดื่มโปรตีนและน้ำสกัดเย็น Healthy Hub"
                 class="h-full w-full object-cover"
               />
             </div>
 
             <div class="mt-4 grid gap-3 sm:grid-cols-3">
-              <div class="group cursor-pointer rounded-xl border border-gray-200 bg-white p-4 transition hover:border-orange-500 hover:shadow-md">
-                <p class="text-xs font-semibold uppercase tracking-wider text-orange-500">
+              <div
+                class="group cursor-pointer rounded-xl border border-brand-cream bg-brand-surface p-4 transition hover:border-brand-red/60 hover:bg-brand-peach/20 hover:shadow-md"
+              >
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-brand-red"
+                >
                   PROTEIN
                 </p>
-                <p class="mt-1 font-display text-base font-medium text-gray-900 transition group-hover:text-orange-600">
+                <p
+                  class="mt-1 font-display text-base font-medium text-brand-dark transition group-hover:text-brand-red"
+                >
                   เวย์โปรตีน &rarr;
                 </p>
               </div>
-              <div class="group cursor-pointer rounded-xl border border-gray-200 bg-white p-4 transition hover:border-lime-500 hover:shadow-md">
-                <p class="text-xs font-semibold uppercase tracking-wider text-lime-600">
+              <div
+                class="group cursor-pointer rounded-xl border border-brand-cream bg-brand-surface p-4 transition hover:border-brand-sage/70 hover:bg-brand-sage-soft/60 hover:shadow-md"
+              >
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-[#8A6D12]"
+                >
                   JUICE
                 </p>
-                <p class="mt-1 font-display text-base font-medium text-gray-900 transition group-hover:text-lime-600">
+                <p
+                  class="mt-1 font-display text-base font-medium text-brand-dark transition group-hover:text-[#8A6D12]"
+                >
                   น้ำสกัดเย็น &rarr;
                 </p>
               </div>
-              <div class="group cursor-pointer rounded-xl border border-gray-200 bg-white p-4 transition hover:border-yellow-500 hover:shadow-md">
-                <p class="text-xs font-semibold uppercase tracking-wider text-yellow-500">
+              <div
+                class="group cursor-pointer rounded-xl border border-brand-cream bg-brand-surface p-4 transition hover:border-brand-red/30 hover:bg-brand-peach/10 hover:shadow-md"
+              >
+                <p
+                  class="text-xs font-semibold uppercase tracking-wider text-brand-subtle"
+                >
                   SMOOTHIES
                 </p>
-                <p class="mt-1 font-display text-base font-medium text-gray-900 transition group-hover:text-yellow-600">
+                <p
+                  class="mt-1 font-display text-base font-medium text-brand-dark transition group-hover:text-brand-red"
+                >
                   สมูทตี้ &rarr;
                 </p>
               </div>
             </div>
           </div>
-          
         </div>
       </section>
 
       <!-- Product Lines Section: แยกหมวดหรือ product line ของแบรนด์ -->
-      <section id="lines" class="mx-auto max-w-6xl px-6 py-16">
+      <section id="lines" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10">
         <!-- หัวข้อและคำอธิบายของหมวดสินค้า -->
         <div class="max-w-2xl">
           <p
-            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
           >
             [Section Label]
           </p>
           <h2 class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl">
             [หัวข้อหมวดสินค้า]
           </h2>
-          <p class="mt-4 text-base leading-8 text-brand-dark/70">
+          <p class="mt-4 text-base leading-8 text-brand-muted">
             [คำอธิบายว่าหน้านี้รองรับสินค้าได้กี่ประเภท หรือแบรนด์มี product
             line อะไรบ้าง]
           </p>
@@ -206,58 +267,58 @@
         <!-- กลุ่มการ์ดหมวดสินค้า -->
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
             >
               01
             </p>
             <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 1]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">
+            <p class="mt-5 text-sm text-brand-subtle">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
             >
               02
             </p>
             <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 2]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">
+            <p class="mt-5 text-sm text-brand-subtle">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <p
-              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+              class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
             >
               03
             </p>
             <h3 class="mt-3 font-display text-2xl text-brand-dark">
               [ชื่อหมวดสินค้า 3]
             </h3>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [อธิบายว่าหมวดนี้เหมาะกับใคร หรือเด่นเรื่องอะไร]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">
+            <p class="mt-5 text-sm text-brand-subtle">
               [ยกตัวอย่างสินค้าในหมวดนี้]
             </p>
           </article>
@@ -265,18 +326,21 @@
       </section>
 
       <!-- Featured Products Section: สินค้าแนะนำหรือสินค้าขายดี -->
-      <section id="products" class="mx-auto max-w-6xl px-6 py-16">
+      <section
+        id="products"
+        class="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10"
+      >
         <!-- หัวข้อและคำเกริ่นของสินค้าเด่น -->
         <div class="max-w-2xl">
           <p
-            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+            class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
           >
             [Section Label]
           </p>
           <h2 class="mt-4 font-display text-3xl text-brand-dark sm:text-4xl">
             [หัวข้อสินค้าแนะนำ]
           </h2>
-          <p class="mt-4 text-base leading-8 text-brand-dark/70">
+          <p class="mt-4 text-base leading-8 text-brand-muted">
             [คำอธิบายสั้น ๆ ของกลุ่มสินค้าเด่นหรือสินค้าขายดี]
           </p>
         </div>
@@ -284,29 +348,38 @@
         <!-- กลุ่มการ์ดสินค้า -->
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white-600 p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <div class="flex items-center justify-between">
               <span
-                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                class="text-xs uppercase tracking-[0.2em] text-brand-subtle"
               >
                 เครื่องดื่มสุขภาพ
               </span>
-              <span class="text-xs text-brand-dark/50"></span>
+              <span class="text-xs text-brand-subtle">500 ml</span>
             </div>
             <h3 class="mt-4 font-display text-2xl text-brand-dark">
               อกไก่ปั่น
             </h3>
-            <img src="/images/Gemini_Generated_Image_k55mwvk55mwvk55m.png"/>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
-              อกไก่คุณภาพสูง คัดสรรมาอย่างดีจากวัคถุดิบสดใหม่พร้อมด้วยกรรมวิธีการทำที่สมบูรณ์แบบ
+            <div
+              class="mt-4 overflow-hidden rounded-xl border border-brand-cream bg-brand-base/70"
+            >
+              <img
+                src="/images/Gemini_Generated_Image_k55mwvk55mwvk55m.png"
+                alt="อกไก่ปั่น"
+                class="h-52 w-full object-cover"
+              />
+            </div>
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
+              อกไก่คุณภาพสูง
+              คัดสรรมาอย่างดีจากวัคถุดิบสดใหม่พร้อมด้วยกรรมวิธีการทำที่สมบูรณ์แบบ
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">หน้าร้าน ออนไลน์</p>
+            <p class="mt-5 text-sm text-brand-subtle">หน้าร้าน ออนไลน์</p>
             <div class="mt-2 flex items-center justify-between">
               <p class="font-display text-3xl text-brand-dark">55 บาท</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream bg-brand-base px-4 py-2 text-sm font-medium text-brand-dark transition hover:border-brand-sage/60 hover:bg-brand-sage/12 hover:text-brand-sage"
               >
                 คลิกดูสินค้า
               </a>
@@ -314,29 +387,37 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <div class="flex items-center justify-between">
               <span
-                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                class="text-xs uppercase tracking-[0.2em] text-brand-subtle"
               >
-                [Category]
+                อาหารคลีน
               </span>
-              <span class="text-xs text-brand-dark/50">[Size]</span>
+              <span class="text-xs text-brand-subtle">400 g</span>
             </div>
             <h3 class="mt-4 font-display text-2xl text-brand-dark">
-              อาหารคลีน
+              ลาบหมูน้ำตก
             </h3>
-            <img src="images/ลาบหมูน้ำตก.png"/>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <div
+              class="mt-4 overflow-hidden rounded-xl border border-brand-cream bg-brand-base/70"
+            >
+              <img
+                src="images/ลาบหมูน้ำตก.png"
+                alt="ลาบหมูน้ำตก"
+                class="h-52 w-full object-cover"
+              />
+            </div>
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-subtle">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
               <p class="font-display text-3xl text-brand-dark">40</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream bg-brand-base px-4 py-2 text-sm font-medium text-brand-dark transition hover:border-brand-sage/60 hover:bg-brand-sage/12 hover:text-brand-sage"
               >
                 คลิกดูสินค้า
               </a>
@@ -344,29 +425,37 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <div class="flex items-center justify-between">
               <span
-                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                class="text-xs uppercase tracking-[0.2em] text-brand-subtle"
               >
                 [Category]
               </span>
-              <span class="text-xs text-brand-dark/50">[Size]</span>
+              <span class="text-xs text-brand-subtle">[Size]</span>
             </div>
             <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <img src="images/orange-juice.png"/>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <div
+              class="mt-4 overflow-hidden rounded-xl border border-brand-cream bg-brand-base/70"
+            >
+              <img
+                src="images/orange-juice.png"
+                alt="[ชื่อสินค้า]"
+                class="h-52 w-full object-cover"
+              />
+            </div>
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-subtle">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
               <p class="font-display text-3xl text-brand-dark">40</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream bg-brand-base px-4 py-2 text-sm font-medium text-brand-dark transition hover:border-brand-sage/60 hover:bg-brand-sage/12 hover:text-brand-sage"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -374,29 +463,37 @@
           </article>
 
           <article
-            class="rounded-[1.75rem] border border-brand-cream bg-white p-6"
+            class="rounded-[1.75rem] border border-brand-cream bg-brand-surface p-6 shadow-sm"
           >
             <div class="flex items-center justify-between">
               <span
-                class="text-xs uppercase tracking-[0.2em] text-brand-dark/50"
+                class="text-xs uppercase tracking-[0.2em] text-brand-subtle"
               >
                 [Category]
               </span>
-              <span class="text-xs text-brand-dark/50">[Size]</span>
+              <span class="text-xs text-brand-subtle">[Size]</span>
             </div>
             <h3 class="mt-4 font-display text-2xl text-brand-dark">
               [ชื่อสินค้า]
             </h3>
-            <img src="images/cookie.png"/>
-            <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+            <div
+              class="mt-4 overflow-hidden rounded-xl border border-brand-cream bg-brand-base/70"
+            >
+              <img
+                src="images/cookie.png"
+                alt="[ชื่อสินค้า]"
+                class="h-52 w-full object-cover"
+              />
+            </div>
+            <p class="mt-3 text-sm leading-7 text-brand-muted">
               [รายละเอียดสั้น ๆ ของสินค้า]
             </p>
-            <p class="mt-5 text-sm text-brand-dark/50">[รูปแบบขาย]</p>
+            <p class="mt-5 text-sm text-brand-subtle">[รูปแบบขาย]</p>
             <div class="mt-2 flex items-center justify-between">
               <p class="font-display text-3xl text-brand-dark">[ราคา]</p>
               <a
                 href="#subscribe"
-                class="rounded-full border border-brand-cream px-4 py-2 text-sm font-medium text-brand-dark/90 transition hover:bg-zinc-100"
+                class="rounded-full border border-brand-cream bg-brand-base px-4 py-2 text-sm font-medium text-brand-dark transition hover:border-brand-sage/60 hover:bg-brand-sage/12 hover:text-brand-sage"
               >
                 [ปุ่มสินค้า]
               </a>
@@ -406,15 +503,18 @@
       </section>
 
       <!-- Benefits Section: จุดเด่นหรือเหตุผลที่ควรเลือกแบรนด์ -->
-      <section id="benefits" class="mx-auto max-w-6xl px-6 py-16">
+      <section
+        id="benefits"
+        class="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10"
+      >
         <div
-          class="rounded-[2rem] bg-brand-blue/10 px-8 py-12 border border-brand-blue/20"
+          class="rounded-[2rem] border border-brand-red/15 bg-gradient-to-br from-brand-peach via-brand-surface to-brand-surface px-6 py-12 shadow-[0_18px_40px_rgba(138,179,59,0.12)] sm:px-8 lg:px-10"
         >
-          <div class="border-y border-brand-cream py-12">
+          <div class="border-y border-brand-red/10 py-12">
             <!-- หัวข้อและคำเกริ่นของจุดเด่น -->
             <div class="max-w-2xl">
               <p
-                class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
               >
                 [Section Label]
               </p>
@@ -423,7 +523,7 @@
               >
                 [หัวข้อจุดเด่น]
               </h2>
-              <p class="mt-4 text-base leading-8 text-brand-dark/70">
+              <p class="mt-4 text-base leading-8 text-brand-muted">
                 [เกริ่นสั้น ๆ ว่าทำไมแบรนด์นี้ตอบโจทย์ผู้ใช้]
               </p>
             </div>
@@ -432,42 +532,42 @@
             <div class="mt-10 grid gap-10 md:grid-cols-3">
               <div>
                 <p
-                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
                 >
                   01
                 </p>
                 <h3 class="mt-3 font-display text-2xl text-brand-dark">
                   [จุดเด่น 1]
                 </h3>
-                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                <p class="mt-3 text-sm leading-7 text-brand-muted">
                   [อธิบายจุดเด่นข้อแรก]
                 </p>
               </div>
 
               <div>
                 <p
-                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
                 >
                   02
                 </p>
                 <h3 class="mt-3 font-display text-2xl text-brand-dark">
                   [จุดเด่น 2]
                 </h3>
-                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                <p class="mt-3 text-sm leading-7 text-brand-muted">
                   [อธิบายจุดเด่นข้อสอง]
                 </p>
               </div>
 
               <div>
                 <p
-                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
                 >
                   03
                 </p>
                 <h3 class="mt-3 font-display text-2xl text-brand-dark">
                   [จุดเด่น 3]
                 </h3>
-                <p class="mt-3 text-sm leading-7 text-brand-dark/70">
+                <p class="mt-3 text-sm leading-7 text-brand-muted">
                   [อธิบายจุดเด่นข้อสาม]
                 </p>
               </div>
@@ -477,16 +577,19 @@
       </section>
 
       <!-- Subscribe / CTA Section: ส่วนปิดการขายและฟอร์มเก็บข้อมูล -->
-      <section id="subscribe" class="bg-brand-cream/20">
-        <div class="mx-auto max-w-6xl px-6 py-16">
+      <section
+        id="subscribe"
+        class="bg-gradient-to-b from-brand-base via-brand-base to-brand-peach"
+      >
+        <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10">
           <div
-            class="rounded-[2rem] border border-brand-cream bg-white p-8 md:p-10"
+            class="rounded-[2rem] border border-brand-red/15 bg-brand-surface p-8 shadow-[0_18px_45px_rgba(138,179,59,0.12)] md:p-10"
           >
             <div class="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
               <!-- ข้อความชวนให้ติดต่อหรือสมัคร -->
               <div>
                 <p
-                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-dark/50"
+                  class="text-sm font-medium uppercase tracking-[0.24em] text-brand-subtle"
                 >
                   [Section Label]
                 </p>
@@ -495,14 +598,14 @@
                 >
                   [หัวข้อปิดการขาย]
                 </h2>
-                <p class="mt-4 max-w-xl text-base leading-8 text-brand-dark/70">
+                <p class="mt-4 max-w-xl text-base leading-8 text-brand-muted">
                   [คำอธิบายสั้น ๆ เพื่อชวนให้กรอกอีเมล ติดต่อ หรือกดสั่งซื้อ]
                 </p>
               </div>
 
               <!-- ฟอร์มตัวอย่างสำหรับรับข้อมูลติดต่อ -->
               <form
-                class="rounded-[1.5rem] border border-brand-cream bg-[#FCFAF8] p-5"
+                class="rounded-[1.5rem] border border-brand-cream bg-brand-base p-5"
                 onsubmit="event.preventDefault()"
               >
                 <label for="email" class="text-sm font-medium text-brand-dark">
@@ -512,11 +615,11 @@
                   id="email"
                   type="email"
                   placeholder="[placeholder@example.com]"
-                  class="mt-3 w-full rounded-2xl border border-brand-cream bg-white px-4 py-3 text-brand-dark/90 outline-none focus:border-brand-red"
+                  class="mt-3 w-full rounded-2xl border border-brand-cream bg-brand-surface px-4 py-3 text-brand-dark outline-none transition focus:border-brand-red"
                 />
                 <button
                   type="submit"
-                  class="mt-4 w-full rounded-2xl bg-brand-red px-5 py-3 text-sm font-medium text-white transition hover:bg-brand-peach hover:text-white"
+                  class="mt-4 w-full rounded-2xl bg-brand-red px-5 py-3 text-sm font-medium text-white transition hover:bg-brand-red-deep"
                 >
                   [ปุ่มส่งข้อมูล]
                 </button>
@@ -528,21 +631,19 @@
     </main>
 
     <!-- Footer: ชื่อแบรนด์และลิงก์สำคัญท้ายหน้า -->
-    <footer class="border-t border-brand-cream bg-white">
+    <footer class="border-t border-brand-cream bg-brand-surface">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-brand-dark/70 md:flex-row md:items-center md:justify-between"
+        class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-brand-muted sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10"
       >
         <!-- ชื่อแบรนด์ -->
         <p>[Brand Name]</p>
         <!-- ลิงก์สำคัญสำหรับเลื่อนไปยัง section ต่าง ๆ -->
         <div class="flex gap-5">
-          <a href="#lines" class="transition hover:text-brand-dark"
-            >[ลิงก์ 1]</a
-          >
-          <a href="#products" class="transition hover:text-brand-dark"
+          <a href="#lines" class="transition hover:text-brand-red">[ลิงก์ 1]</a>
+          <a href="#products" class="transition hover:text-brand-red"
             >[ลิงก์ 2]</a
           >
-          <a href="#subscribe" class="transition hover:text-brand-dark"
+          <a href="#subscribe" class="transition hover:text-brand-red"
             >[ลิงก์ 3]</a
           >
         </div>
